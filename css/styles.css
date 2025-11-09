@@ -470,6 +470,138 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, div {
 }
 
 /* ============================================
+   PROCESS SECTION - Nuestro Proceso
+   ============================================ */
+.process-section {
+    padding: 120px 0;
+    background: var(--primary-dark);
+    position: relative;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Línea vertical conectora */
+.process-steps::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    bottom: 60px;
+    width: 3px;
+    background: linear-gradient(180deg, 
+        var(--accent-yellow) 0%, 
+        var(--accent-orange) 50%, 
+        var(--accent-yellow) 100%);
+    transform: translateX(-50%);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.process-step {
+    position: relative;
+    padding: 40px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 2px solid rgba(251, 191, 36, 0.2);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-yellow);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+}
+
+/* Flecha entre pasos */
+.process-step::after {
+    content: '↓';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: var(--accent-yellow);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+.step-number {
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.5);
+    border: 4px solid var(--primary-dark);
+    z-index: 2;
+}
+
+.step-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.process-step h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.process-step h4 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--accent-yellow) !important;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.process-step p {
+    color: #cbd5e1 !important;
+    line-height: 1.8;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* ============================================
    WHY US - Fondo Gris Claro
    ============================================ */
 .why-us {
@@ -1306,6 +1438,47 @@ body {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        max-width: 100%;
+    }
+
+    .process-steps::before {
+        left: 30px;
+        transform: none;
+    }
+
+    .process-step {
+        padding: 35px 25px;
+        margin-left: 40px;
+    }
+
+    .process-step:hover {
+        transform: translateX(5px);
+    }
+
+    .step-number {
+        left: -70px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .step-icon {
+        font-size: 44px;
+    }
+
+    .process-step h3 {
+        font-size: 22px;
+    }
+
+    .process-step h4 {
+        font-size: 17px;
+    }
+
+    .process-step p {
+        font-size: 15px;
     }
 
     .section-title {
